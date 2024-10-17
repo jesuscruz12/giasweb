@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importar useNavigate en lugar de useHistory
 import '../styles/Login.css';
 
 const Login = () => {
@@ -9,6 +10,7 @@ const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const navigate = useNavigate(); // Hook para redirigir
 
   useEffect(() => {
     const loadRecaptcha = () => {
@@ -44,10 +46,16 @@ const Login = () => {
         setSuccessMessage('Inicio de sesión exitoso.');
         setErrorMessage('');
 
+        // Guardar los datos del usuario en localStorage
         localStorage.setItem('user', JSON.stringify(result.user));
+        localStorage.setItem('userRole', result.user.role);
 
-        // Redirigir al dashboard o página principal
-        window.location.href = '/dashboard';
+        // Redirigir al dashboard según el rol
+        if (result.user.role === 'admin') {
+          navigate('/admin-dashboard'); // Redirigir a página de administrador
+        } else {
+          navigate('/dashboard'); // Redirigir a página de usuario
+        }
       } else {
         setSuccessMessage('');
         setErrorMessage(result.message || 'Error al iniciar sesión.');
@@ -86,6 +94,7 @@ const Login = () => {
           />
         </div>
 
+        {/* Google reCAPTCHA */}
         <div className="g-recaptcha" data-sitekey="6Lc5pV0qAAAAAFyeHTlFcFJOlMWTXzQGwlbeA88_"></div>
 
         <button type="submit">Iniciar Sesión</button>

@@ -20,7 +20,10 @@ const userSchema = new mongoose.Schema({
   // Campos adicionales para verificación de correo
   isVerified: { type: Boolean, default: false },  // Estado de verificación de correo
   verificationToken: { type: String },  // Token de verificación de correo
-  verificationTokenExpires: { type: Date }  // Fecha de expiración del token de verificación
+  verificationTokenExpires: { type: Date },  // Fecha de expiración del token de verificación
+  // Campo para rol (usuario o administrador)
+  role: { type: String, enum: ['user', 'admin'], default: 'user' } 
+
 });
 
 // Cifrar la contraseña antes de guardar

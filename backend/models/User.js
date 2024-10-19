@@ -19,15 +19,9 @@ const userSchema = new mongoose.Schema({
   isVerified: { type: Boolean, default: false },  // Estado de verificación de correo
   verificationToken: { type: String },  // Token de verificación de correo
   verificationTokenExpires: { type: Date },  // Fecha de expiración del token de verificación
-<<<<<<< HEAD
-  // Campo para rol (usuario o administrador)
-  role: { type: String, enum: ['user', 'admin'], default: 'user' } 
-
-=======
   role: { type: String, enum: ['user', 'admin'], default: 'user' },  // Roles: 'user' o 'admin'
   resetPasswordToken: { type: String },  // Token para restablecer la contraseña
   resetPasswordExpires: { type: Date }  // Expiración del token de restablecimiento de contraseña
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 });
 
 // Máximo de intentos fallidos y tiempo de bloqueo

@@ -35,30 +35,24 @@ app.use(session({
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
     sameSite: 'strict',
-    maxAge: 30 * 60 * 1000
+    maxAge: 30 * 60 * 1000 // 30 minutos
   },
   genid: function(req) {
-    return crypto.randomBytes(32).toString('hex');
+    return crypto.randomBytes(32).toString('hex'); // Generar un ID de sesión único
   }
 }));
 
 // Importar rutas
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
-<<<<<<< HEAD
 const policyRoute = require('./routes/policyRoutes');  // Importar rutas de políticas
-=======
-const passwordResetRoutes = require('./routes/passwordReset');
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
+const passwordResetRoutes = require('./routes/passwordReset'); // Importar rutas de restablecimiento de contraseña
 
 // Usar las rutas
 app.use('/api/users', usersRoute);
 app.use('/api/auth', authRoute);
-<<<<<<< HEAD
 app.use('/api/policies', policyRoute);  // Usar rutas de políticas
-=======
-app.use('/api/password', passwordResetRoutes);
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
+app.use('/api/password', passwordResetRoutes); // Usar rutas de restablecimiento de contraseña
 
 // Ruta para verificar que el servidor funciona
 app.get('/', (req, res) => {

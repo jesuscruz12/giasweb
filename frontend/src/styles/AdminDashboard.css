@@ -1,4 +1,5 @@
 .admin-dashboard-container {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,3 +72,14 @@ p {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+=======
+    display: flex;
+    justify-content: center;  /* Centrar horizontalmente */
+    align-items: center;      /* Centrar verticalmente */
+    height: 100vh;            /* Ocupar toda la altura de la pantalla */
+    text-align: center;       /* Centrar el texto */
+    background-color: #f5f5f5; /* Color de fondo opcional */
+  }
+  
+  
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf

@@ -82,7 +82,7 @@ const Register = () => {
     let newErrors = {};
     
     // Expresión regular actualizada para incluir letras en español, incluyendo la ñ y vocales acentuadas
-    const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/;
+    const nameRegex = /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]+$/;
 
     if (!formData.nombre.trim() || !nameRegex.test(formData.nombre)) {
       newErrors.nombre = 'El nombre solo debe contener letras, espacios y caracteres válidos (á, é, í, ó, ú, ñ)';
@@ -167,7 +167,7 @@ const Register = () => {
             placeholder="Nombre"
             value={formData.nombre}
             onChange={(e) => {
-              if (/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]*$/.test(e.target.value)) {
+              if (/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]*$/.test(e.target.value)) {
                 setFormData({ ...formData, nombre: e.target.value });
               }
             }}
@@ -183,7 +183,7 @@ const Register = () => {
             placeholder="Apellidos"
             value={formData.apellidos}
             onChange={(e) => {
-              if (/^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]*$/.test(e.target.value)) {
+              if (/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s]*$/.test(e.target.value)) {
                 setFormData({ ...formData, apellidos: e.target.value });
               }
             }}

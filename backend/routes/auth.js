@@ -1,9 +1,9 @@
 const express = require('express');
-const bcrypt = require('bcrypt');
-const User = require('../models/User');
+const authController = require('../controllers/authController');
 const router = express.Router();
 
 // Ruta para el inicio de sesión
+<<<<<<< HEAD
 router.post('/login', async (req, res) => {
   const { correo, password } = req.body;
 
@@ -39,5 +39,8 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: 'Error en el servidor', error });
   }
 });
+=======
+router.post('/login', authController.login);
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 
 module.exports = router;

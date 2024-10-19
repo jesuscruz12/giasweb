@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import '../styles/AdminDashboard.css';
 import PolicyCrud from '../components/PolicyCrud'; // Importa el componente CRUD de políticas
@@ -9,11 +10,18 @@ const AdminDashboard = () => {
     setShowPolicyCrud(true); // Cambia el estado a true cuando se presiona el botón
   };
 
+=======
+import React from 'react';
+import '../styles/AdminDashboard.css';
+
+const AdminDashboard = () => {
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
   return (
     <div className="admin-dashboard-container">
       <div className="admin-dashboard-content">
         <h1>Panel de Administrador</h1>
         <p>Bienvenido al panel de administración.</p>
+<<<<<<< HEAD
 
         {/* Tarjeta para Gestión de Políticas */}
         {!showPolicyCrud ? (
@@ -31,6 +39,9 @@ const AdminDashboard = () => {
             <PolicyCrud />  {/* Incluye el CRUD de Políticas */}
           </div>
         )}
+=======
+        {/* Aquí puedes añadir más contenido, estadísticas, herramientas, etc. */}
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
       </div>
     </div>
   );

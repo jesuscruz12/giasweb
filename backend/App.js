@@ -11,7 +11,11 @@ dotenv.config();
 const app = express();
 
 // Habilitar CORS
-app.use(cors());
+const corsOptions = {
+  origin: 'http://localhost:3000', // URL de tu frontend
+  credentials: true, // Para permitir cookies, si es necesario
+};
+app.use(cors(corsOptions));
 
 // Middleware para parsear JSON
 app.use(express.json());
@@ -41,12 +45,20 @@ app.use(session({
 // Importar rutas
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
+<<<<<<< HEAD
 const policyRoute = require('./routes/policyRoutes');  // Importar rutas de políticas
+=======
+const passwordResetRoutes = require('./routes/passwordReset');
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 
 // Usar las rutas
 app.use('/api/users', usersRoute);
 app.use('/api/auth', authRoute);
+<<<<<<< HEAD
 app.use('/api/policies', policyRoute);  // Usar rutas de políticas
+=======
+app.use('/api/password', passwordResetRoutes);
+>>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 
 // Ruta para verificar que el servidor funciona
 app.get('/', (req, res) => {

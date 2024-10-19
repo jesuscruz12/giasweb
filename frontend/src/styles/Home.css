@@ -5,7 +5,8 @@
     justify-content: center;
     min-height: 80vh;
     text-align: center;
-    padding-top: 100px; /* Añade espacio para evitar que el header lo tape */
+    padding-top: 150px; /* Añade espacio para evitar que el header lo tape */
+    padding-bottom: 50px;
   }
   
   

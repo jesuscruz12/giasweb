@@ -1,17 +1,70 @@
-.footer {
-    background-color: #0047AB; /* Azul corporativo */
-    color: white;
-    padding: 1rem 0;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  .footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-    
-  }
-  
+/* General footer styles */
+.footer { 
+  background-color: #333; /* Dark background color */
+  color: #fff; /* White text color */
+  padding: 20px 0; /* Padding for spacing */
+}
+
+.container {
+  display: flex;
+  justify-content: space-between; /* Space out the content */
+  align-items: center; /* Center align the items vertically */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  max-width: 1200px; /* Maximum width of the container */
+  margin: 0 auto; /* Center the container */
+}
+
+.footer-rights {
+  flex: 1;
+  text-align: left; /* Align text to the left */
+  margin-left: 10px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  flex: 2;
+}
+
+/* Social container styles */
+.social-container {
+  margin-left: 20px; /* Margin for separation between sections */
+}
+
+.social-icons a {
+  display: block; /* Each icon on a new line */
+  color: #fff; /* Icon text color */
+  text-decoration: none; /* Remove text underline */
+  margin-bottom: 5px; /* Space between the icons */
+}
+
+.social-icons a:hover {
+  color: #ddd; /* Change color on hover */
+}
+
+/* Legal links section styles */
+.legal-container {
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  align-items: flex-start; /* Align items to the start of the container */
+  margin-left: 20px; /* Margin for separation between sections */
+}
+
+.legal-container ul {
+  list-style-type: none; /* Remove list bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.legal-container ul li {
+  margin-bottom: 5px; /* Space between the links */
+}
+
+.legal-container a {
+  color: #fff; /* Link color */
+  text-decoration: none; /* Remove text underline */
+}
+
+.legal-container a:hover {
+  color: #ddd; /* Change color on hover */
+}

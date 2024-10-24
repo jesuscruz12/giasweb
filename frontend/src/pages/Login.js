@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
-<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom'; // Importar useNavigate en lugar de useHistory
-=======
-import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-bootstrap';
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 import '../styles/Login.css';
 import imagen2 from '../assets/imagen2.png';
 import imagen3 from '../assets/imagen3.jpg';
@@ -17,11 +13,7 @@ const Login = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-<<<<<<< HEAD
-  const navigate = useNavigate(); // Hook para redirigir
-=======
   const navigate = useNavigate();
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
 
   // Cargar reCAPTCHA cuando el componente se monta
   useEffect(() => {
@@ -66,15 +58,9 @@ const Login = () => {
 
         // Redirigir al dashboard según el rol
         if (result.user.role === 'admin') {
-<<<<<<< HEAD
-          navigate('/admin-dashboard'); // Redirigir a página de administrador
-        } else {
-          navigate('/dashboard'); // Redirigir a página de usuario
-=======
           navigate('/admin-dashboard');
         } else {
           navigate('/dashboard');
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
         }
       } else {
         setSuccessMessage('');
@@ -139,16 +125,7 @@ const Login = () => {
             <a href="/register">Registrarse</a>
           </div>
         </div>
-<<<<<<< HEAD
-
-        {/* Google reCAPTCHA */}
-        <div className="g-recaptcha" data-sitekey="6Lc5pV0qAAAAAFyeHTlFcFJOlMWTXzQGwlbeA88_"></div>
-
-        <button type="submit">Iniciar Sesión</button>
-      </form>
-=======
       </div>
->>>>>>> 57a9d654f4988941b0210ad3a7eeb1928c37a2cf
     </div>
   );
 };

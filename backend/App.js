@@ -6,6 +6,7 @@ const session = require('express-session');
 const crypto = require('crypto');
 const MongoStore = require('connect-mongo');
 
+// Cargar las variables de entorno
 dotenv.config();
 
 const app = express();
@@ -33,7 +34,7 @@ app.use(session({
   store: MongoStore.create({ mongoUrl: process.env.MONGO_URI }),
   cookie: {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.NODE_ENV === 'production', // Solo activar en producción
     sameSite: 'strict',
     maxAge: 30 * 60 * 1000 // 30 minutos
   },
@@ -45,14 +46,22 @@ app.use(session({
 // Importar rutas
 const usersRoute = require('./routes/users');
 const authRoute = require('./routes/auth');
-const policyRoute = require('./routes/policyRoutes');  // Importar rutas de políticas
-const passwordResetRoutes = require('./routes/passwordReset'); // Importar rutas de restablecimiento de contraseña
+const policyRoute = require('./routes/policyRoutes');
+const termsRoute = require('./routes/terms');
+const passwordResetRoutes = require('./routes/passwordReset');
+const socialLinksRoutes = require('./routes/socialLinks');
+const legalBoundaryRoute = require('./routes/legalBoundaryRoutes');
+const sloganRoutes = require('./routes/SloganRoutes'); // Nueva ruta de eslogan
 
 // Usar las rutas
 app.use('/api/users', usersRoute);
 app.use('/api/auth', authRoute);
-app.use('/api/policies', policyRoute);  // Usar rutas de políticas
-app.use('/api/password', passwordResetRoutes); // Usar rutas de restablecimiento de contraseña
+app.use('/api/policies', policyRoute);
+app.use('/api/terms', termsRoute);
+app.use('/api/password', passwordResetRoutes);
+app.use('/api/social-links', socialLinksRoutes);
+app.use('/api/legal-boundaries', legalBoundaryRoute);
+app.use('/api/slogan', sloganRoutes); // Usar la ruta de eslogan
 
 // Ruta para verificar que el servidor funciona
 app.get('/', (req, res) => {

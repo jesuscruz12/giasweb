@@ -29,6 +29,13 @@
   font-size: 1.5rem; /* Tamaño de fuente */
 }
 
+/* Estilo para la versión de la política */
+.policy-version {
+  color: #888; /* Color gris claro para la versión */
+  margin: 5px 0 15px 0; /* Espacio superior e inferior */
+  font-size: 1.1rem; /* Tamaño de fuente ligeramente más pequeño */
+}
+
 /* Párrafos dentro del PolicyViewer */
 .policy-viewer-content p {
   color: #333; /* Color del texto */
@@ -62,7 +69,7 @@
 /* Ajustes responsivos */
 @media (max-width: 768px) {
   .policy-viewer-content {
-      width: 90%; /* Ajusta el ancho en pantallas pequeñas */
-      height: auto; /* Altura automática para pantallas pequeñas */
+    width: 90%; /* Ajusta el ancho en pantallas pequeñas */
+    height: auto; /* Altura automática para pantallas pequeñas */
   }
 }
